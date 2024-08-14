@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+    <h2>Register form</h2>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% comment %} 
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password1 }}
+        {{ form.password2 }} 
+        {% endcomment %}
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </form>
+{% endblock %}
